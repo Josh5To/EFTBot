@@ -2,12 +2,11 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 
 client.on('message', msg => {
-  if (msg.content === 'ping') {
-    msg.reply('pong')
-  }
   
+  var nmsg = msg.content.toLowerCase()
   
-  switch (msg.content){
+  switch (nmsg) {
+    //Start Map Links
     case '!shoreline':
       msg.reply('https://cutt.ly/OtlbGTA')
       break;
@@ -27,6 +26,13 @@ client.on('message', msg => {
     case '!interchange':
       msg.reply('https://cutt.ly/wtlnig8')
       break;
+    //End Map Links
+    //Start Ammo Info
+    case '!ammochart':
+      msg.reply('https://i.imgur.com/JskiR3X.png')
+      break;
+      
+      
   }
   
 })
