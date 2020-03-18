@@ -7,31 +7,34 @@ client.on('message', msg => {
   
   switch (nmsg) {
     //Start Map Links
-    case '!shoreline':
+    case '~shoreline':
       msg.reply('https://cutt.ly/OtlbGTA')
       break;
       
-    case '!customs':
+    case '~customs':
       msg.reply('https://cutt.ly/3tlb3tF')
       break;
       
-    case '!factory':
+    case '~factory':
       msg.reply('https://cutt.ly/Otlb5PG')
       break;
       
-    case '!reserve':
+    case '~reserve':
       msg.reply('https://cutt.ly/4tlnrbt')
       break;
     
-    case '!interchange':
+    case '~interchange':
       msg.reply('https://cutt.ly/wtlnig8')
       break;
     //End Map Links
     //Start Ammo Info
-    case '!ammochart':
+    case '~ammochart':
       msg.reply('https://i.imgur.com/JskiR3X.png')
       break;
       
+    case '~help':
+      msg.reply('Hello! Here\'s a list of commands I can handle: \n ~reserve, ~factory, ~shoreline, ~interchange, ~customs, ~shoreline will give you maps \n ~ammochart gives you an image of NoFoodAfterMidnight\'s ammo damage chart')
+      break;
       
   }
   
