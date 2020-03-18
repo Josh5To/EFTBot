@@ -8,31 +8,31 @@ client.on('message', msg => {
   switch (nmsg) {
     //Start Map Links
     case '~shoreline':
-      msg.reply('https://cutt.ly/OtlbGTA')
+      msg.reply('https://i.redd.it/qlwzubo6y0c21.jpg')
       break;
       
     case '~customs':
-      msg.reply('https://cutt.ly/3tlb3tF')
+      msg.reply('https://i.redd.it/zmanfyd558841.png')
       break;
       
     case '~factory':
-      msg.reply('https://cutt.ly/Otlb5PG')
+      msg.reply('https://i.imgur.com/FP3eIYa.png')
       break;
       
     case '~reserve':
-      msg.reply('https://cutt.ly/4tlnrbt')
+      msg.reply('https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/thumb/c/c0/ReserveMap3d.jpg/1280px-ReserveMap3d.jpg?version=6708e054d1a0a18df621d0edf287b7c3')
       break;
     
     case '~interchange':
-      msg.reply('https://cutt.ly/ztlWCkL')
+      msg.reply('https://i.imgur.com/aUXxB3j.jpg')
       break;
       
     case '~lab':
-      msg.reply('https://cutt.ly/xtlQOQF')
+      msg.reply('https://i.redd.it/el7cgdzcno721.jpg')
       break;
       
     case '~woods':
-      msg.reply('https://cutt.ly/XtlW4Hk')
+      msg.reply('https://i.redd.it/ygn3whnwc6c41.png')
       break;
       
     //End Map Links
