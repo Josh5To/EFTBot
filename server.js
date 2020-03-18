@@ -26,6 +26,11 @@ client.on('message', msg => {
     case '~interchange':
       msg.reply('https://cutt.ly/wtlnig8')
       break;
+      
+    case '~lab':
+      msg.reply('https://cutt.ly/xtlQOQF')
+      break;
+      
     //End Map Links
     //Start Ammo Info
     case '~ammochart':
@@ -33,7 +38,7 @@ client.on('message', msg => {
       break;
       
     case '~help':
-      msg.reply('Hello! Here\'s a list of commands I can handle: \n ~reserve, ~factory, ~shoreline, ~interchange, ~customs, ~shoreline will give you maps \n ~ammochart gives you an image of NoFoodAfterMidnight\'s ammo damage chart')
+      msg.reply('Hello! Here\'s a list of commands I can handle: \n ~lab, ~reserve, ~factory, ~interchange, ~customs, ~shoreline will give you maps \n ~ammochart gives you an image of NoFoodAfterMidnight\'s ammo damage chart')
       break;
       
   }
