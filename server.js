@@ -24,7 +24,7 @@ client.on('message', msg => {
       break;
     
     case '~interchange':
-      msg.reply('https://cutt.ly/wtlnig8')
+      msg.reply('https://cutt.ly/ztlWCkL')
       break;
       
     case '~lab':
