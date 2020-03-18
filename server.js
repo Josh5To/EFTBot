@@ -6,36 +6,29 @@ client.on('message', msg => {
     msg.reply('pong')
   }
   
-  //Shoreline map
-  if (msg.content === '!shore') {
-    msg.reply('https://cutt.ly/OtlbGTA')
-  }
   
-  //Customs map
-  if (msg.content === '!customs') {
-    msg.reply('https://cutt.ly/3tlb3tF')
-  }
-  
-  //Factory map
-  if (msg.content === '!factory') {
-    msg.reply('https://cutt.ly/Otlb5PG')
-  }
-  
-  //Reserve map
-  if (msg.content === '!reserve') {
-    msg.reply('https://cutt.ly/4tlnrbt')
-  }
-              
-  //Reserve map
-  if (msg.content === '!reserve') {
-    msg.reply('https://cutt.ly/4tlnrbt')
-  }
-  
-  //Interchange map
-  if (msg.content === '!interchange') {
-    msg.reply('https://cutt.ly/wtlnig8')
-  }
+  switch (msg.content){
+    case '!shoreline':
+      msg.reply('https://cutt.ly/OtlbGTA')
+      break;
       
+    case '!customs':
+      msg.reply('https://cutt.ly/3tlb3tF')
+      break;
+      
+    case '!factory':
+      msg.reply('https://cutt.ly/Otlb5PG')
+      break;
+      
+    case '!reserve':
+      msg.reply('https://cutt.ly/4tlnrbt')
+      break;
+    
+    case '!interchange':
+      msg.reply('https://cutt.ly/wtlnig8')
+      break;
+  }
+  
 })
 
 
