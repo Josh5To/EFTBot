@@ -31,6 +31,10 @@ client.on('message', msg => {
       msg.reply('https://cutt.ly/xtlQOQF')
       break;
       
+    case '~woods':
+      msg.reply('https://cutt.ly/XtlW4Hk')
+      break;
+      
     //End Map Links
     //Start Ammo Info
     case '~ammochart':
