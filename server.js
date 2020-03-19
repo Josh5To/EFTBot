@@ -46,10 +46,10 @@ client.on('message', msg => {
       break;
       
     case '~help':
-      msg.reply('Hello! Here\'s a list of commands I can handle:' +
-                '~lab, ~reserve, ~factory, ~interchange, ~customs, ~shoreline will give you maps' +
+      msg.reply('Hello! Here\'s a list of commands I can handle: \n' +
+                '~lab, ~reserve, ~woods, ~factory, ~interchange, ~customs, ~shoreline will give you maps \n ' +
                 '~ammochart gives you an image of NoFoodAfterMidnight\'s ammo damage chart \n ' +
-                '')
+                '~noobammo will provide a more streamlined ammo chart')
       break;
       
   }
