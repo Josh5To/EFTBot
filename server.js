@@ -41,8 +41,15 @@ client.on('message', msg => {
       msg.reply('https://i.imgur.com/JskiR3X.png')
       break;
       
+    case '~noobammo':
+      msg.reply('https://i.redd.it/kvd1b7wqjvk41.png')
+      break;
+      
     case '~help':
-      msg.reply('Hello! Here\'s a list of commands I can handle: \n ~lab, ~reserve, ~factory, ~interchange, ~customs, ~shoreline will give you maps \n ~ammochart gives you an image of NoFoodAfterMidnight\'s ammo damage chart')
+      msg.reply('Hello! Here\'s a list of commands I can handle:' +
+                '~lab, ~reserve, ~factory, ~interchange, ~customs, ~shoreline will give you maps' +
+                '~ammochart gives you an image of NoFoodAfterMidnight\'s ammo damage chart \n ' +
+                '')
       break;
       
   }
