@@ -12,3 +12,5 @@ Usable commands:
 ~ammochart gives you an image of NoFoodAfterMidnight's ammo damage chart 
  
 ~noobammo will provide a more streamlined ammo chart by u/Rune_Master
+
+Message me on twitter for link to bot. it's being hosted on my pi so I'll take requests on a server by server basis.
