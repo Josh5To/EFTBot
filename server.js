@@ -2,6 +2,17 @@ require('dotenv').config()
 const Discord = require('discord.js')
 const client = new Discord.Client()
 
+const shoreline = process.env.SHORE_LINK
+const customs = process.env.CUST_LINK
+const factory = process.env.FACT_LINK
+const reserve = process.env.RES_LINK
+const interchange = process.env.INTER_LINK
+const llab = process.env.LAB_LINK
+const woods = process.env.WOOD_LINK
+const ammochart = process.env.AMMO_LINK
+const noobammo = process.env.NOOB_LINK
+
+
 client.on('message', msg => {
   
   var nmsg = msg.content.toLowerCase()
@@ -9,41 +20,41 @@ client.on('message', msg => {
   switch (nmsg) {
     //Start Map Links
     case '~shoreline':
-      msg.reply('https://i.redd.it/qlwzubo6y0c21.jpg')
+      msg.reply(shoreline)
       break;
       
     case '~customs':
-      msg.reply('https://i.redd.it/zmanfyd558841.png')
+      msg.reply(customs)
       break;
       
     case '~factory':
-      msg.reply('https://i.imgur.com/FP3eIYa.png')
+      msg.reply(factory)
       break;
       
     case '~reserve':
-      msg.reply('https://gamepedia.cursecdn.com/escapefromtarkov_gamepedia/thumb/c/c0/ReserveMap3d.jpg/1280px-ReserveMap3d.jpg?version=6708e054d1a0a18df621d0edf287b7c3')
+      msg.reply(reserve)
       break;
     
     case '~interchange':
-      msg.reply('https://i.imgur.com/aUXxB3j.jpg')
+      msg.reply(interchange)
       break;
       
     case '~lab':
-      msg.reply('https://i.redd.it/el7cgdzcno721.jpg')
+      msg.reply(llab)
       break;
       
     case '~woods':
-      msg.reply('https://i.redd.it/ygn3whnwc6c41.png')
+      msg.reply(woods)
       break;
       
     //End Map Links
     //Start Ammo Info
     case '~ammochart':
-      msg.reply('https://i.imgur.com/JskiR3X.png')
+      msg.reply(ammochart)
       break;
       
     case '~noobammo':
-      msg.reply('https://i.redd.it/kvd1b7wqjvk41.png')
+      msg.reply(noobammo)
       break;
       
     case '~help':
