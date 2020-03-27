@@ -1,6 +1,6 @@
 require('dotenv').config()
-const Discord = require('discord.js')
-const client = new Discord.Client()
+const {Client, MessageAttachment}= require('discord.js')
+const client = new Client()
 
 const shoreline = process.env.SHORE_LINK
 const customs = process.env.CUST_LINK
@@ -20,31 +20,39 @@ client.on('message', msg => {
   switch (nmsg) {
     //Start Map Links
     case '~shoreline':
-      msg.reply(shoreline)
+      msg.reply("Coming right up")
+      msg.reply(new MessageAttachment(shoreline))
       break;
       
     case '~customs':
-      msg.reply(customs)
+      msg.reply(new MessageAttachment(customs))
       break;
       
     case '~factory':
-      msg.reply(factory)
+      msg.reply(new MessageAttachment(factory))
       break;
       
     case '~reserve':
-      msg.reply(reserve)
+      msg.reply(new MessageAttachment(reserve))
       break;
     
     case '~interchange':
-      msg.reply(interchange)
+      msg.reply(new MessageAttachment(interchange))
       break;
       
     case '~lab':
-      msg.reply(llab)
+      msg.reply(new MessageAttachment(llab))
       break;
       
     case '~woods':
-      msg.reply(woods)
+      msg.reply(new MessageAttachment(woods))
+      break;
+
+    case '~randommap':
+      msg.reply(ranMap(msg))
+      break;
+    
+    case '~random level 1':
       break;
       
     //End Map Links
@@ -54,12 +62,13 @@ client.on('message', msg => {
       break;
       
     case '~noobammo':
-      msg.reply(noobammo)
+      msg.reply(new MessageAttachment(noobammo))
       break;
       
     case '~help':
       msg.reply('Hello! Here\'s a list of commands I can handle: \n' +
                 '~lab, ~reserve, ~woods, ~factory, ~interchange, ~customs, ~shoreline will give you maps \n ' +
+                'Can\'t decide map? try ~random. \n ' +
                 '~ammochart gives you an image of NoFoodAfterMidnight\'s ammo damage chart \n ' +
                 '~noobammo will provide a more streamlined ammo chart by u/Rune_Master')
       break;
@@ -67,6 +76,14 @@ client.on('message', msg => {
   }
   
 })
+
+function ranMap(imsg) {
+  imsg.reply('Shuffling...')
+  var maps = [shoreline, customs, factory, reserve, interchange, llab, woods]
+  var rand = Math.floor((Math.random() * maps.length))
+
+  return (new MessageAttachment(maps[rand]));
+}
 
 
 
