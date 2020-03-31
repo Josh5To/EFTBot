@@ -1,5 +1,7 @@
 require('dotenv').config()
-const {Client, MessageAttachment}= require('discord.js')
+const {Client, MessageAttachment, MessageEmbed} = require('discord.js')
+const EquipList = require('./EquipList.js')
+const el = new EquipList()
 const client = new Client()
 
 const shoreline = process.env.SHORE_LINK
@@ -12,7 +14,7 @@ const woods = process.env.WOOD_LINK
 const ammochart = process.env.AMMO_LINK
 const noobammo = process.env.NOOB_LINK
 
-
+console.log(el.getLevel1Armor())
 client.on('message', msg => {
   
   var nmsg = msg.content.toLowerCase()
@@ -20,7 +22,6 @@ client.on('message', msg => {
   switch (nmsg) {
     //Start Map Links
     case '~shoreline':
-      msg.reply("Coming right up")
       msg.reply(new MessageAttachment(shoreline))
       break;
       
@@ -53,6 +54,15 @@ client.on('message', msg => {
       break;
     
     case '~random level 1':
+      msg.reply(ranOne())
+      break;
+    
+    case '~random level 2':
+      msg.reply(ranTwo())
+      break;
+
+    case '~random level 3':
+      msg.reply(ranThree())
       break;
       
     //End Map Links
@@ -76,6 +86,60 @@ client.on('message', msg => {
   }
   
 })
+
+function ranOne() {
+  var h = el.getLevel1Helm()
+  var a = el.getLevel1Armor()
+  var w = el.getLevel1Weapon()
+
+  const randomSet = new MessageEmbed()
+    .setColor('#0099ff')
+    .setTitle('Your Random Setup:')
+    .setAuthor('Tarkov Bot', 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8f8830f0-679a-4974-977c-bd5802617c82/db0qvlo-32e8ff5c-d63b-429b-bf05-205b350157d8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhmODgzMGYwLTY3OWEtNDk3NC05NzdjLWJkNTgwMjYxN2M4MlwvZGIwcXZsby0zMmU4ZmY1Yy1kNjNiLTQyOWItYmYwNS0yMDViMzUwMTU3ZDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.HydlF-9X9oGF1XyU9PY3q9FCrtCjvHdLZohBrEQ5bbc', 'https://github.com/Josh5To/EFTBot')
+    .setDescription('Level 1')
+    .addFields(
+      { name: 'Helmet:', value: h[Math.floor((Math.random() * h.length))] },
+      { name: 'Armor:', value: a[Math.floor((Math.random() * a.length))] },
+      { name: 'Weapon:', value: w[Math.floor((Math.random() * w.length))] },
+  )
+  return randomSet;
+}
+
+function ranTwo() {
+  var h = el.getLevel2Helm()
+  var a = el.getLevel2Armor()
+  var w = el.getLevel2Weapon()
+
+  const randomSet = new MessageEmbed()
+    .setColor('#0099ff')
+    .setTitle('Your Random Setup:')
+    .setAuthor('Tarkov Bot', 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8f8830f0-679a-4974-977c-bd5802617c82/db0qvlo-32e8ff5c-d63b-429b-bf05-205b350157d8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhmODgzMGYwLTY3OWEtNDk3NC05NzdjLWJkNTgwMjYxN2M4MlwvZGIwcXZsby0zMmU4ZmY1Yy1kNjNiLTQyOWItYmYwNS0yMDViMzUwMTU3ZDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.HydlF-9X9oGF1XyU9PY3q9FCrtCjvHdLZohBrEQ5bbc', 'https://github.com/Josh5To/EFTBot')
+    .setDescription('Level 2')
+    .addFields(
+      { name: 'Helmet:', value: h[Math.floor((Math.random() * h.length))] },
+      { name: 'Armor:', value: a[Math.floor((Math.random() * a.length))] },
+      { name: 'Weapon:', value: w[Math.floor((Math.random() * w.length))] },
+  )
+  return randomSet;
+}
+
+function ranThree() {
+  var h = el.getLevel3Helm()
+  var a = el.getLevel3Armor()
+  var w = el.getLevel3Weapon()
+
+  const randomSet = new MessageEmbed()
+    .setColor('#0099ff')
+    .setTitle('Your Random Setup:')
+    .setAuthor('Tarkov Bot', 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/8f8830f0-679a-4974-977c-bd5802617c82/db0qvlo-32e8ff5c-d63b-429b-bf05-205b350157d8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzhmODgzMGYwLTY3OWEtNDk3NC05NzdjLWJkNTgwMjYxN2M4MlwvZGIwcXZsby0zMmU4ZmY1Yy1kNjNiLTQyOWItYmYwNS0yMDViMzUwMTU3ZDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.HydlF-9X9oGF1XyU9PY3q9FCrtCjvHdLZohBrEQ5bbc', 'https://github.com/Josh5To/EFTBot')
+    .setDescription('Level 3')
+    .addFields(
+      { name: 'Helmet:', value: h[Math.floor((Math.random() * h.length))] },
+      { name: 'Armor:', value: a[Math.floor((Math.random() * a.length))] },
+      { name: 'Weapon:', value: w[Math.floor((Math.random() * w.length))] },
+  )
+  return randomSet;
+}
 
 function ranMap(imsg) {
   imsg.reply('Shuffling...')
